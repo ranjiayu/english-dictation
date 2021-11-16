@@ -1,5 +1,12 @@
 development:
   version: 0.1
+  dict:
+    雅思王第11章Section1: /public/materials/ysw_c11_s1.txt
+    雅思王第12章Section2: /public/materials/ysw_c11_s2.txt
+
 
 production:
   version: 0.1
+  dict:
+    雅思王第11章Section1: /public/materials/ysw_c11_s1.txt
+    雅思王第12章Section2: /public/materials/ysw_c11_s2.txt

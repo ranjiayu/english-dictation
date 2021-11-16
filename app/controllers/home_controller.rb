@@ -6,4 +6,7 @@ class HomeController < ApplicationController
   def about
     @version = Rails.application.config_for(:app).version
   end
+
+  def login
+  end
 end
