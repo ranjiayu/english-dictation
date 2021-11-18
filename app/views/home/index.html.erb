@@ -9,9 +9,20 @@
         <div class="form-group-header">
           <label for="words">单词列表</label>
         </div>
-        <div class="mb-2">使用回车分割, 一行一个单词</div>
         <div class="form-group-body">
-          <textarea class="form-control" id="words"></textarea>
+          <textarea placeholder="使用回车分割, 一行一个单词" class="form-control" id="words"></textarea>
+          <details>
+            <summary class="btn" style="margin-top: 10px;">快捷导入<span class="dropdown-caret"></span></summary>
+            <div class="border p-3 mt-2">
+              <span style="color: #666; font-size: 12px;">选择材料:</span>
+              <select class="form-select" id="material-path">
+                <% @materials.each do |m| %>
+                  <option value="<%= m[1] %>"><%= m[0] %></option>
+                <% end %>
+              </select>
+              <button class="btn" id="import-materials">OK</button>
+            </div>
+          </details>
         </div>
 
         <div class="form-group-header" style="margin-top: 10px;">
@@ -24,7 +35,7 @@
         </div>
 
         <div class="form-group-header" style="margin-top: 10px;">
-          <label for="english-type">打乱顺序播放</label>
+          <label for="english-type">播放顺序</label>
         </div>
         <div class="form-group-body" style="margin-top: 10px;">
           <input type="radio" name="disorder" value="0" checked> 顺序
