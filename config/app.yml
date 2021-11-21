@@ -2,15 +2,15 @@ development:
   version: 0.1
   dict:
     雅思王语料库第11章Section1: /materials/ysw_c11_s1.txt
-    雅思王语料库第12章Section2: /materials/ysw_c11_s2.txt
-    雅思王语料库第12章Section3: /materials/ysw_c11_s3.txt
-    雅思王语料库第12章Section4: /materials/ysw_c11_s4.txt
+    雅思王语料库第11章Section2: /materials/ysw_c11_s2.txt
+    雅思王语料库第11章Section3: /materials/ysw_c11_s3.txt
+    雅思王语料库第11章Section4: /materials/ysw_c11_s4.txt
 
 
 production:
   version: 0.1
   dict:
     雅思王语料库第11章Section1: /materials/ysw_c11_s1.txt
-    雅思王语料库第12章Section2: /materials/ysw_c11_s2.txt
-    雅思王语料库第12章Section3: /materials/ysw_c11_s3.txt
-    雅思王语料库第12章Section4: /materials/ysw_c11_s4.txt
+    雅思王语料库第11章Section2: /materials/ysw_c11_s2.txt
+    雅思王语料库第11章Section3: /materials/ysw_c11_s3.txt
+    雅思王语料库第11章Section4: /materials/ysw_c11_s4.txt
