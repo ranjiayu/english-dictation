@@ -1,1 +1,12 @@
-个人中心
+<% content_for :head do %>
+  <div class="Header-item Header-item--full"></div>
+  <div class="Header-item mr-0">
+    <span><%= current_user.email %></span>
+  </div>
+<% end %>
+
+<div>
+  <h1>历史记录</h1>
+</div>
+
+

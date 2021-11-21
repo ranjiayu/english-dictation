@@ -111,3 +111,12 @@
 
 <div id="audio-container" style="display: none;">
 </div>
+
+<% content_for :head do %>
+  <% if !current_user.nil? %>
+    <div class="Header-item Header-item--full"></div>
+    <div class="Header-item mr-0">
+      <span><%= current_user.email %></span>
+    </div>
+  <% end %>
+<% end %>

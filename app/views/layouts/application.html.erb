@@ -16,12 +16,13 @@
     <div class="container">
       <!-- Flash message -->
       <% flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, class: (name == :notice ? "flash" : "flash mt-3 flash-error")  %>
+        <div style="margin: 0 10px;">
+          <%= content_tag :div, msg, class: (name == "notice" ? "flash" : "flash mt-3 flash-error"), style: "margin-bottom: 10px;"  %>
+        </div>
       <% end -%>
+
       <%= yield %>
     </div>
-
-
     <%= render "layouts/footer"  %>
   </body>
 </html>

@@ -1,26 +1,32 @@
-<h2>登 陆</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<div style="width: 400px; height: 100%; margin: 0 auto;">
+  <h2>登陆</h2>
+  <br />
+  <%= form_for(
+    resource,
+    as: resource_name,
+    url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email,autofocus: true,autocomplete: "email", class: "form-control", style: "width:100%;" %>
+    </div>
+    <br />
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", style: "width:100%;" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <br />
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :记住我 %>
+      </div>
+    <% end %>
+    <br />
+    <div class="actions">
+      <%= f.submit "登入", class: "btn mr-2 btn-primary", style: "width: 100%;" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "登陆" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
