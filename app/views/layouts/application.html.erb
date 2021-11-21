@@ -14,8 +14,14 @@
   <body>
     <%= render "layouts/header"  %>
     <div class="container">
+      <!-- Flash message -->
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: (name == :notice ? "flash" : "flash mt-3 flash-error")  %>
+      <% end -%>
       <%= yield %>
     </div>
+
+
     <%= render "layouts/footer"  %>
   </body>
 </html>
