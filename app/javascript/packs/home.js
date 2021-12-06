@@ -242,18 +242,4 @@ window.onload = () => {
     });
   }
 
-  // 导入资料库
-  let importBtn = document.querySelector("#import-materials");
-  if (importBtn) {
-    importBtn.addEventListener("click", () => {
-      let path = document.querySelector("#material-path").value;
-      // console.log(path);
-      fetch(path).then((res) => {
-        return res.text()
-      }).then((result) => {
-        // console.log(result);
-        document.querySelector("#words").innerHTML = result;
-      })
-    });
-  }
 };
