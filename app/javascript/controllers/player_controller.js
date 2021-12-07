@@ -3,14 +3,15 @@
  * @description 播放器控制器
  */
 
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
+import {diffWords} from "diff";
 
 // Connects to data-controller="player"
 export default class extends Controller {
 
   static targets = ["words", "materialPath", "englishType", "disorder",
     "interval", "startBtn", "pauseBtn", "stopBtn", "currentWord", "progress",
-    "eyeShow", "eyeClose"] 
+    "eyeShow", "eyeClose", "diffBtn", "userResult"] 
 
   connect() {
     console.log("player controller connected.");
@@ -187,6 +188,37 @@ export default class extends Controller {
       return false;
     }
     return true;
+  }
+
+  // 对照结果
+  diff() {
+    // 原始文本
+    let played = [];
+    for (let i = 0; i < this.played.length; i ++) {
+      played.push(this.played[i].getAttribute("word-content"));
+    }
+    if (played.length === 0) {
+      alert("请听写后对比结果");
+      return;
+    }
+    let originalWords = played.join("\n");
+    // 用户文本
+    let userResult = this.userResultTarget.value.replace("\r\n", "\n");
+    console.log(originalWords, userResult);
+    let diff = diffWords(originalWords, userResult),
+      display = document.getElementById('display'),
+      fragment = document.createDocumentFragment();
+    diff.forEach((part) => {
+      const color = part.added ? 'green' :
+        part.removed ? 'red' : 'grey';
+      let span = document.createElement('span');
+      span.style.color = color;
+      span.appendChild(document
+        .createTextNode(part.value));
+      fragment.appendChild(span);
+    });
+    display.innerHTML = "";
+    display.appendChild(fragment);
   }
 
   // 打乱数组 

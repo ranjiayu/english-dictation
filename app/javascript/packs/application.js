@@ -4,8 +4,8 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs";
-import "turbolinks";
+import Turbolinks from "turbolinks"
 import "../controllers/index";
 
-
+Turbolinks.start()
 Rails.start()

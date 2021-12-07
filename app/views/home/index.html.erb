@@ -101,8 +101,8 @@
     </div>
     <div class="Box-row">
       <div class="form-group">
-      <textarea class="form-control" placeholder="可以直接在这里写下结果, 一行一个, 按照播放顺序对比结果" id="user-result"></textarea>
-      <button class="btn" id="diffBtn" style="margin-top: 10px;">对比结果</button>
+      <textarea class="form-control" placeholder="可以直接在这里写下结果, 一行一个, 按照播放顺序对比结果" data-player-target="userResult"></textarea>
+      <button data-player-target="diffBtn" data-action="player#diff" class="btn" style="margin-top: 10px;">对比结果</button>
       <pre id="display"></pre>
       </div>
     </div>
